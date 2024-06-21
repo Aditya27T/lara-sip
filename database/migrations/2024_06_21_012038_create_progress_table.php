@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('status')->enum(['pending', 'approved', 'ongoing'])->default('pending');
             $table->timestamps();
         });
+
+        Schema::table('reports', function (Blueprint $table) {
+            $table->dropColumn('report-status');
+        });
+
+        
     }
 
     /**
